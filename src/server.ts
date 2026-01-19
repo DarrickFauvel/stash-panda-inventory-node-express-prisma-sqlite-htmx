@@ -7,7 +7,11 @@ const app = express();
 app.use(express.static("src/public"));
 
 app.get("/", (req, res) => {
-  res.send("Hello from Express!");
+  res.sendFile("index.html");
+});
+
+app.get("/hello", (req, res) => {
+  res.send("Hello from server!");
 });
 
 app.listen(PORT, () => {
